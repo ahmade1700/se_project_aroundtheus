@@ -57,7 +57,7 @@
 }
 
 .profile__edit-button:hover {
-  background: transparent url(../images/edit-button-hover.svg) center no-repeat;
+  opacity: 0.5;
 }
 
 .profile__add-button {
@@ -69,14 +69,16 @@
   border: 1px solid #e8e8e8;
   box-sizing: border-box;
 }
-@media screen and (max-width: 800px) {
+
+.profile__add-button:hover {
+  opacity: 0.5;
+}
+@media screen and (min-width: 774px) and (max-width: 1280px) {
   .profile {
-    max-width: 600px;
-    margin: 0 auto;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 774px) {
   .profile {
     flex-direction: column;
     margin-top: 42px;

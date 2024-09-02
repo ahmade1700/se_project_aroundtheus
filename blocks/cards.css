@@ -62,3 +62,7 @@
   padding: 0;
   padding-right: 30px;
 }
+
+.card__like-button:hover {
+  opacity: 0.5;
+}
