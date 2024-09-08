@@ -1,3 +1,7 @@
+.cards {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
 .cards__list {
   list-style: none;
   display: grid;
