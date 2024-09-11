@@ -24,4 +24,7 @@
   .page__section {
     max-width: 320px;
   }
+  .page__content {
+    padding: 0;
+  }
 }
