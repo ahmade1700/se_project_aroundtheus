@@ -6,25 +6,20 @@
   min-height: 100vh;
 }
 
-.page__section {
+.page__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0px 20px;
   max-width: 880px;
   width: 100%;
   position: relative;
   margin: 0 auto;
 }
 
-.page__content {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0px 20px;
-}
-
 @media screen and (max-width: 480px) {
-  .page__section {
-    max-width: 320px;
-  }
   .page__content {
     padding: 0;
+    max-width: 320px;
   }
 }
