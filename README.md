@@ -18,5 +18,8 @@ The project applies flex boxes and grid boxes, sometimes in the same element dep
 
 Plans to update the design and markup depending on the review and in the further future add functionality to the website.
 
+Github Pages link
+https://ahmade1700.github.io/se_project_aroundtheus/
+
 Breif Video about the project.
 https://www.icloud.com/iclouddrive/00fldxK8Kg7Textnfvq3reWWQ#Screen_Recording_2024-09-11_111425
