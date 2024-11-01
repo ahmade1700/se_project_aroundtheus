@@ -41,6 +41,7 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
+  text-align: left;
 }
 
 .profile__description {

@@ -1,6 +1,6 @@
 .modal {
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   font-family: "inter", Arial, Helvetica, sans-serif;
   color: black;
   font-style: normal;
@@ -27,7 +27,7 @@
   padding: 36px;
   border-radius: 10px;
   max-width: 430px;
-  display: flex;
+  display: inherit;
   flex-direction: column;
 }
 
