@@ -8,7 +8,7 @@
   font-weight: bold;
 }
 
-.modal__opened {
+.modal-opened {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,6 +73,7 @@
   border: none;
   color: white;
   background-color: black;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 640px) {
@@ -80,7 +81,7 @@
     width: 26px;
     height: 26px;
     bottom: calc(100% + 26px);
-    left: 95%;
+    left: 90%;
   }
   .modal__container {
     max-width: 282px;
