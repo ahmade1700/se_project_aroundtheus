@@ -82,7 +82,7 @@ function toggleModal() {
 // Event Listners
 
 editButton.addEventListener("click", function () {
-  fillProfileInputs;
+  fillProfileInputs();
   toggleModal();
 });
 

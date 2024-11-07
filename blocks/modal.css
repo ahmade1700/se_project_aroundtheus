@@ -96,3 +96,12 @@
     font-size: 18px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .modal__button {
+    font-size: 14px;
+  }
+  .modal__heading {
+    font-size: 18px;
+  }
+}
