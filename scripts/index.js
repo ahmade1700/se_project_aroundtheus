@@ -76,7 +76,7 @@ function setProfileData() {
 }
 
 function toggleModal() {
-  modal.classList.toggle("modal-opened");
+  modal.classList.toggle("modal_opened");
 }
 
 // Event Listners
