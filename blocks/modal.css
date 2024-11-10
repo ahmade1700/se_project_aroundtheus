@@ -6,10 +6,6 @@
   font-style: normal;
   font-size: 24px;
   font-weight: bold;
-}
-
-.modal_opened {
-  display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -19,6 +15,10 @@
   left: 0;
   bottom: 0;
   top: 0;
+}
+
+.modal_opened {
+  display: flex;
 }
 
 .modal__container {
