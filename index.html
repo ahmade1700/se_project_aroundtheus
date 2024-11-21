@@ -33,26 +33,56 @@
         <p class="footer__copyright">© 2022 Around The U.S.</p>
       </footer>
     </div>
-
-    <div class="modal">
+    // Profile Modal
+    <div class="modal modal__profile">
       <div class="modal__container">
-        <button class="modal__exit"></button>
+        <button class="modal__exit modal__exit-editor"></button>
         <p class="modal__heading">Edit Profile</p>
-        <form class="modal__form" id="profile__form">
-          <input type="text" class="modal__input" name="title" id="title" />
+        <form class="modal__form modal__form-profile" id="profile__form">
           <input
             type="text"
-            class="modal__input"
-            name="description"
-            id="description"
+            class="modal__input modal__input_type_title"
+            name="title"
           />
-          <button class="modal__button" type="submit">Save</button>
+          <input
+            type="text"
+            class="modal__input modal__input_type_description"
+            name="description"
+          />
+          <button class="modal__button modal__button-editor" type="submit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    // new card Modal
+    <div class="modal modal__new-card">
+      <div class="modal__container">
+        <button class="modal__exit modal__exit-new-card"></button>
+        <p class="modal__heading">Add New Card</p>
+        <form class="modal__form modal__new-card-form" id="profile__form">
+          <input
+            type="text"
+            class="modal__input modal__input_type_name"
+            name="title"
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            class="modal__input modal__input_type_url"
+            name="description"
+            placeholder="URL"
+          />
+          <button class="modal__button modal__button-new-card" type="submit">
+            Save
+          </button>
         </form>
       </div>
     </div>
 
     <template id="card-template">
       <li class="card">
+        <button class="card__delete-button"></button>
         <img class="card__image" />
         <div class="card__description">
           <h2 class="card__title"></h2>

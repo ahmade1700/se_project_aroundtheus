@@ -27,19 +27,30 @@ const initialCards = [
 
 const cardsList = document.querySelector(".cards__list");
 
-const modal = document.querySelector(".modal");
-const profileForm = document.querySelector(".modal__form");
-
+//profile buttons
 const editButton = document.querySelector(".profile__edit-button");
-const exitButton = document.querySelector(".modal__exit");
-
+const addButton = document.querySelector(".profile__add-button");
+//Profile Elements
 const profileName = document.querySelector(".profile__title");
 const profileDesc = document.querySelector(".profile__description");
 
-const nameEditInput = modal.querySelector("#title");
-const descEditInput = modal.querySelector("#description");
+//profile modal
+const profileModal = document.querySelector(".modal__profile");
+const profileForm = document.querySelector(".modal__form-profile");
 
-const submitButton = profileForm.querySelector(".modal__button");
+//profile Modal Buttons
+const profileExitButton = document.querySelector(".modal__exit-editor");
+const profileSubmitButton = profileForm.querySelector(".modal__button-profile");
+
+// profile Modal Fields
+const nameEditInput = profileModal.querySelector(".modal__input_type_title");
+const descEditInput = profileModal.querySelector(
+  ".modal__input_type_description"
+);
+
+//New Card Modal
+const newCardModal = document.querySelector("modal__new-card");
+const newCardForm = document.querySelector(".modal__new-card-form");
 
 let cardsTemplate =
   document.querySelector("#card-template").content.firstElementChild;
@@ -75,21 +86,24 @@ function setProfileData() {
   profileDesc.textContent = descEditInput.value;
 }
 
-function toggleModal() {
-  modal.classList.toggle("modal_opened");
+function toggleProfileModal() {
+  profileModal.classList.toggle("modal_opened");
+}
+function toggleProfileModal() {
+  profileModal.classList.toggle("modal_opened");
 }
 
 // Event Listners
 
 editButton.addEventListener("click", function () {
   fillProfileInputs();
-  toggleModal();
+  toggleProfileModal();
 });
 
-exitButton.addEventListener("click", toggleModal);
+profileExitButton.addEventListener("click", toggleProfileModal);
 
 profileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   setProfileData();
-  toggleModal();
+  toggleProfileModal();
 });
