@@ -15,19 +15,6 @@
   margin-top: 51px;
 }
 
-.card__delete-button {
-  background-image: url(../images/Trash.svg);
-  height: 19px;
-  width: 19px;
-  position: absolute;
-  cursor: pointer;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-
 @media screen and (max-width: 480px) {
   .cards__list {
     margin-top: 36px;
