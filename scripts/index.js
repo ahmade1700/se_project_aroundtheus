@@ -66,7 +66,7 @@ const previewImage = previewModal.querySelector(".modal__preview-image");
 const previewTitle = previewModal.querySelector(".modal__preview-title");
 const previewExitButton = previewModal.querySelector(".modal__exit-preview");
 
-let cardsTemplate =
+const cardsTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
 function getCardData(cardData) {
@@ -85,10 +85,9 @@ function getCardData(cardData) {
     cardElement.remove();
   });
 
-  cardImageElement.addEventListener("click", () => {});
-
   cardImageElement.addEventListener("click", () => {
     previewImage.src = cardData.link;
+    previewImage.alt = cardData.name;
     previewTitle.textContent = cardData.name;
     toggleModal(previewModal);
   });
@@ -125,6 +124,8 @@ function toggleModal(modal) {
   modal.classList.toggle("modal_opened");
 }
 
+function addNewCard() {}
+
 function addNewCard(e) {
   e.preventDefault();
 
@@ -141,14 +142,11 @@ function addNewCard(e) {
     link: url,
   };
 
-  initialCards.push(newCard); //Push new cards to the front
+  const cardElement = getCardData(newCard);
 
-  cardsList.innerHTML = ""; // Clear the list
+  cardsList["append"](cardElement); //Push new cards to the front
 
-  renderCards(); //re-render the cards
-
-  titleCardInput.value = ""; // clear input fields
-  urlCardInput.value = "";
+  e.target.reset();
 
   toggleModal(newCardModal);
 }
@@ -174,9 +172,8 @@ profileForm.addEventListener("submit", (e) => {
   setProfileData(e);
   toggleModal(profileModal);
 });
-newCardForm.addEventListener("submit", (e) => {
-  addNewCard(e);
-});
+
+newCardForm.addEventListener("submit", addNewCard);
 
 previewExitButton.addEventListener("click", function () {
   toggleModal(previewModal);
