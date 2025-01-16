@@ -43,12 +43,20 @@
             type="text"
             class="modal__input modal__input_type_title"
             name="title"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span class="modal__input_type_error">This is an error</span>
           <input
             type="text"
             class="modal__input modal__input_type_description"
             name="description"
+            minlength="2"
+            maxlength="200"
+            required
           />
+          <span class="modal__input_type_error">This is an error</span>
           <button class="modal__button modal__button-editor" type="submit">
             Save
           </button>
@@ -73,13 +81,19 @@
             class="modal__input modal__input_type_name"
             name="title"
             placeholder="Name"
+            minlength="1"
+            maxlength="30"
+            required
           />
+          <span class="modal__input_type_error">This is an error</span>
           <input
-            type="text"
+            type="url"
             class="modal__input modal__input_type_url"
             name="description"
             placeholder="URL"
+            required
           />
+          <span class="modal__input_type_error">This is an error</span>
           <button class="modal__button modal__button-new-card" type="submit">
             Save
           </button>
@@ -99,5 +113,6 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
