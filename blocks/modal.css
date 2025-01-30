@@ -87,6 +87,9 @@
   width: 358px;
   border-bottom: 1px solid rgba(84 84 84 / 0.7);
 }
+.modal__input-invalid {
+  border-bottom-color: red;
+}
 
 .modal__button {
   cursor: pointer;
@@ -105,6 +108,20 @@
 
 .modal__preview-image {
   overflow: hidden;
+}
+
+.modal__input_type_error {
+  max-width: 358px;
+  color: red;
+  font-weight: 400;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.modal__button_disabled {
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 640px) {

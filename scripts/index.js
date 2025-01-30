@@ -47,6 +47,8 @@ const nameEditInput = profileModal.querySelector(".modal__input_type_title");
 const descEditInput = profileModal.querySelector(
   ".modal__input_type_description"
 );
+//General Modal Selector
+const Modals = document.querySelectorAll(".modal");
 
 //New Card Modal
 const newCardModal = document.querySelector(".modal_new-card");
@@ -101,6 +103,21 @@ function getCardData(cardData) {
 
 // Functions
 
+function resetForms(modal) {
+  const form = modal.querySelector(".modal__form");
+  //select error message
+  const errorMessages = form.querySelectorAll(".modal__input_type_error");
+  //reset form
+  form.reset();
+  //clear error messages
+  errorMessages.forEach((errorMessage) => {
+    errorMessage.textContent = "";
+  });
+  //Remove error class
+  modal.classList.toggle("modal__input-invalid");
+  console.log(modal.classList);
+}
+
 function renderCards() {
   initialCards.forEach((cardData) => {
     const cardElement = getCardData(cardData);
@@ -122,9 +139,12 @@ function setProfileData(e) {
 
 function toggleModal(modal) {
   modal.classList.toggle("modal_opened");
+  if (modal.classList.contains("modal__opened")) {
+    console.log("howdy");
+    resetForms(modal);
+  }
+  0;
 }
-
-function addNewCard() {}
 
 function addNewCard(e) {
   e.preventDefault();
@@ -144,11 +164,18 @@ function addNewCard(e) {
 
   const cardElement = getCardData(newCard);
 
-  cardsList["append"](cardElement); //Push new cards to the front
+  cardsList["prepend"](cardElement);
 
   e.target.reset();
 
   toggleModal(newCardModal);
+}
+
+function toggleModalByOverlay(e, modal) {
+  if (e.target.classList.contains("modal")) {
+    toggleModal(e.target);
+    resetForms(modal);
+  }
 }
 
 // Event Listners
@@ -177,6 +204,21 @@ newCardForm.addEventListener("submit", addNewCard);
 
 previewExitButton.addEventListener("click", function () {
   toggleModal(previewModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  const openedModal = document.querySelector(".modal_opened");
+  if (event.key === "Escape") {
+    if (!(openedModal === null)) {
+      openedModal.classList.remove("modal_opened");
+    }
+  }
+});
+
+Modals.forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    toggleModalByOverlay(e, modal);
+  });
 });
 
 renderCards();
