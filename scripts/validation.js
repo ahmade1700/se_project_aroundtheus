@@ -7,20 +7,21 @@ function hasInvalidInput(formEl, options) {
 }
 
 function toggleButtonState(formEl, options) {
-  const { submitButtonSelector } = options;
-  const { inactiveButtonClass } = options;
+  const { submitButtonSelector, inactiveButtonClass } = options;
   const saveButton = formEl.querySelector(submitButtonSelector);
 
   if (hasInvalidInput(formEl, options)) {
     saveButton.classList.add(inactiveButtonClass);
+    saveButton.disabled = true;
   } else {
     saveButton.classList.remove(inactiveButtonClass);
+    saveButton.disabled = false;
   }
 }
 
 function toggleErrorMessage(inputEl, options) {
-  const { errorClass } = options;
-  const { visibleErrorClass } = options;
+  const { errorClass, visibleErrorClass } = options;
+
   const errorMessage = inputEl.validationMessage;
   const errorElement = inputEl.parentElement.querySelector(
     `#${inputEl.id}-error`
