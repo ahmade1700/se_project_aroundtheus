@@ -147,7 +147,14 @@ function setProfileData(e) {
 
 function toggleModal(modal) {
   modal.classList.toggle("modal_opened");
-  document.removeEventListener("keydown", toggleModalByEsc);
+
+  if (modal.classList.contains("modal_opened")) {
+    document.addEventListener("keydown", toggleModalByEsc);
+    console.log("woo");
+  } else {
+    document.removeEventListener("keydown", toggleModalByEsc);
+    console.log("woooo");
+  }
 }
 
 function addNewCard(e) {
@@ -185,7 +192,6 @@ function toggleModalByEsc(e) {
   if (e.key === "Escape") {
     const openedModal = document.querySelector(".modal_opened");
     toggleModal(openedModal);
-    document.removeEventListener("keydown", toggleModalByEsc);
   }
 }
 // Event Listners
@@ -193,16 +199,13 @@ function toggleModalByEsc(e) {
 editButton.addEventListener("click", function () {
   toggleModal(profileModal);
   fillProfileInputs();
-  document.addEventListener("keydown", toggleModalByEsc);
 });
 addButton.addEventListener("click", function () {
   toggleModal(newCardModal);
-  document.addEventListener("keydown", toggleModalByEsc);
 });
 
 exitButtons.forEach((exitButton) => {
-  const modalContainer = exitButton.parentElement;
-  const modal = modalContainer.parentElement;
+  const modal = exitButton.closest(".modal");
 
   exitButton.addEventListener("click", (e) => {
     toggleModal(modal);
