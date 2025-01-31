@@ -39,26 +39,31 @@
         <button class="modal__exit modal__exit-editor"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form modal__form-profile" id="profile__form">
-          <input
-            type="text"
-            class="modal__input modal__input_type_title"
-            name="title"
-            minlength="2"
-            maxlength="40"
-            required
-            id="name"
-          />
-          <span id="name-error" class="modal__input_type_error"></span>
-          <input
-            type="text"
-            class="modal__input modal__input_type_description"
-            name="description"
-            minlength="2"
-            maxlength="200"
-            id="description"
-            required
-          />
-          <span id="description-error" class="modal__input_type_error"></span>
+          <label class="modal_label">
+            <input
+              type="text"
+              class="modal__input modal__input_type_title"
+              name="title"
+              minlength="2"
+              maxlength="40"
+              required
+              id="name"
+            />
+
+            <span id="name-error" class="modal__input_type_error"></span>
+          </label>
+          <label class="modal_label">
+            <input
+              type="text"
+              class="modal__input modal__input_type_description"
+              name="description"
+              minlength="2"
+              maxlength="200"
+              id="description"
+              required
+            />
+            <span id="description-error" class="modal__input_type_error"></span>
+          </label>
           <button class="modal__button modal__button-editor" type="submit">
             Save
           </button>
@@ -78,26 +83,30 @@
         <button class="modal__exit modal__exit-new-card"></button>
         <p class="modal__heading">Add New Card</p>
         <form class="modal__form modal__new-card-form" id="new_card__form">
-          <input
-            type="text"
-            class="modal__input modal__input_type_name"
-            name="title"
-            placeholder="Name"
-            minlength="1"
-            maxlength="30"
-            required
-            id="title"
-          />
-          <span id="title-error" class="modal__input_type_error"></span>
-          <input
-            type="url"
-            class="modal__input modal__input_type_url"
-            name="description"
-            placeholder="URL"
-            id="url"
-            required
-          />
-          <span id="url-error" class="modal__input_type_error"></span>
+          <label class="modal_label">
+            <input
+              type="text"
+              class="modal__input modal__input_type_name"
+              name="title"
+              placeholder="Name"
+              minlength="1"
+              maxlength="30"
+              required
+              id="title"
+            />
+            <span id="title-error" class="modal__input_type_error"></span>
+          </label>
+          <label class="modal_label">
+            <input
+              type="url"
+              class="modal__input modal__input_type_url"
+              name="description"
+              placeholder="URL"
+              id="url"
+              required
+            />
+            <span id="url-error" class="modal__input_type_error"></span>
+          </label>
           <button class="modal__button modal__button-new-card" type="submit">
             Save
           </button>

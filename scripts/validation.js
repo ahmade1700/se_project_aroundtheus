@@ -20,6 +20,7 @@ function toggleButtonState(formEl, options) {
 
 function toggleErrorMessage(inputEl, options) {
   const { errorClass } = options;
+  const { visibleErrorClass } = options;
   const errorMessage = inputEl.validationMessage;
   const errorElement = inputEl.parentElement.querySelector(
     `#${inputEl.id}-error`
@@ -27,10 +28,12 @@ function toggleErrorMessage(inputEl, options) {
 
   if (!inputEl.validity.valid) {
     inputEl.classList.add(errorClass);
+    errorElement.classList.add(visibleErrorClass);
     errorElement.textContent = errorMessage;
   } else {
     errorElement.textContent = "";
     inputEl.classList.remove(errorClass);
+    errorElement.classList.remove(visibleErrorClass);
   }
 }
 
@@ -66,6 +69,7 @@ const config = {
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__input-invalid",
+  visibleErrorClass: "modal__input_type_error-visible",
 };
 
 enableValidation(config);

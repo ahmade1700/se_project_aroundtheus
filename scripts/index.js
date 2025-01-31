@@ -25,6 +25,8 @@ const initialCards = [
   },
 ];
 
+const modalFormsSelector = ["modal_profile", "modal_new-card"];
+
 const cardsList = document.querySelector(".cards__list");
 const profileSection = document.querySelector(".profile");
 //profile buttons
@@ -107,6 +109,7 @@ function resetForms(modal) {
   const form = modal.querySelector(".modal__form");
   //select error message
   const errorMessages = form.querySelectorAll(".modal__input_type_error");
+  const inputs = Array.from(form.querySelectorAll(".modal__input"));
   //reset form
   form.reset();
   //clear error messages
@@ -114,8 +117,9 @@ function resetForms(modal) {
     errorMessage.textContent = "";
   });
   //Remove error class
-  modal.classList.toggle("modal__input-invalid");
-  console.log(modal.classList);
+  inputs.forEach((input) => {
+    input.classList.remove("modal__input-invalid");
+  });
 }
 
 function renderCards() {
@@ -139,11 +143,13 @@ function setProfileData(e) {
 
 function toggleModal(modal) {
   modal.classList.toggle("modal_opened");
-  if (modal.classList.contains("modal__opened")) {
-    console.log("howdy");
+  if (
+    modal.classList.contains("modal_profile") ||
+    modal.classList.contains("modal_new-card")
+  ) {
     resetForms(modal);
+    fillProfileInputs();
   }
-  0;
 }
 
 function addNewCard(e) {
@@ -172,16 +178,20 @@ function addNewCard(e) {
 }
 
 function toggleModalByOverlay(e, modal) {
-  if (e.target.classList.contains("modal")) {
+  if (
+    e.target.classList.contains("modal") &&
+    !e.target.classList.contains("modal_preview")
+  ) {
     toggleModal(e.target);
     resetForms(modal);
+  } else if (e.target.classList.contains("modal")) {
+    toggleModal(e.target);
   }
 }
 
 // Event Listners
 
 editButton.addEventListener("click", function () {
-  fillProfileInputs();
   toggleModal(profileModal);
 });
 addButton.addEventListener("click", function () {
