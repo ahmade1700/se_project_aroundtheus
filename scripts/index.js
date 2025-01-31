@@ -109,9 +109,7 @@ function getCardData(cardData) {
 
 function resetProfileForm() {
   //select error message
-  const errorMessages = profileForm.querySelectorAll(
-    ".modal__input_type_error"
-  );
+  const errorMessages = profileForm.querySelectorAll(".modal__input-error");
   const inputs = Array.from(profileForm.querySelectorAll(".modal__input"));
   //reset form
   profileForm.reset();
@@ -146,14 +144,12 @@ function setProfileData(e) {
 }
 
 function toggleModal(modal) {
-  modal.classList.toggle("modal_opened");
+  modal.classList.toggle("modal-opened");
 
-  if (modal.classList.contains("modal_opened")) {
+  if (modal.classList.contains("modal-opened")) {
     document.addEventListener("keydown", toggleModalByEsc);
-    console.log("woo");
   } else {
     document.removeEventListener("keydown", toggleModalByEsc);
-    console.log("woooo");
   }
 }
 
@@ -190,7 +186,7 @@ function toggleModalByOverlay(e) {
 
 function toggleModalByEsc(e) {
   if (e.key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened");
+    const openedModal = document.querySelector(".modal-opened");
     toggleModal(openedModal);
   }
 }

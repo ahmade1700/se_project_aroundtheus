@@ -39,7 +39,7 @@
         <button class="modal__exit modal__exit-editor"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form modal__form-profile" id="profile-form">
-          <label class="modal_label">
+          <label class="modal__label">
             <input
               type="text"
               class="modal__input modal__input_type_title"
@@ -50,9 +50,9 @@
               id="name"
             />
 
-            <span id="name-error" class="modal__input_type_error"></span>
+            <span id="name-error" class="modal__input-error"></span>
           </label>
-          <label class="modal_label">
+          <label class="modal__label">
             <input
               type="text"
               class="modal__input modal__input_type_description"
@@ -62,7 +62,7 @@
               id="description"
               required
             />
-            <span id="description-error" class="modal__input_type_error"></span>
+            <span id="description-error" class="modal__input-error"></span>
           </label>
           <button class="modal__button modal__button-editor" type="submit">
             Save
@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="modal modal_preview">
-      <div class="modal__container modal__container_preview">
+      <div class="modal__container modal__container-preview">
         <button class="modal__exit modal__exit-preview"></button>
         <img class="modal__preview-image" />
         <h3 class="modal__preview-title"></h3>
@@ -83,7 +83,7 @@
         <button class="modal__exit modal__exit-new-card"></button>
         <p class="modal__heading">Add New Card</p>
         <form class="modal__form modal__new-card-form" id="new_card__form">
-          <label class="modal_label">
+          <label class="modal__label">
             <input
               type="text"
               class="modal__input modal__input_type_name"
@@ -94,9 +94,9 @@
               required
               id="title"
             />
-            <span id="title-error" class="modal__input_type_error"></span>
+            <span id="title-error" class="modal__input-error"></span>
           </label>
-          <label class="modal_label">
+          <label class="modal__label">
             <input
               type="url"
               class="modal__input modal__input_type_url"
@@ -105,7 +105,7 @@
               id="url"
               required
             />
-            <span id="url-error" class="modal__input_type_error"></span>
+            <span id="url-error" class="modal__input-error"></span>
           </label>
           <button class="modal__button modal__button-new-card" type="submit">
             Save
