@@ -144,9 +144,9 @@ function setProfileData(e) {
 }
 
 function toggleModal(modal) {
-  modal.classList.toggle("modal-opened");
+  modal.classList.toggle("modal_opened");
 
-  if (modal.classList.contains("modal-opened")) {
+  if (modal.classList.contains("modal_opened")) {
     document.addEventListener("keydown", toggleModalByEsc);
   } else {
     document.removeEventListener("keydown", toggleModalByEsc);
@@ -186,7 +186,7 @@ function toggleModalByOverlay(e) {
 
 function toggleModalByEsc(e) {
   if (e.key === "Escape") {
-    const openedModal = document.querySelector(".modal-opened");
+    const openedModal = document.querySelector(".modal_opened");
     toggleModal(openedModal);
   }
 }
